@@ -10,7 +10,7 @@ def upload():
         filename = werkzeug.utils.secure_filename(imageFile.filename)
         imageFile.save("./uploadimages/" + filename)
         conf = r"--psm 6 --oem 3"
-        text = pytesseract.image_to_string(PIL.Image.open("./uploadimages/"+filename),config = conf,lang="eng+mon" )
+        text = pytesseract.image_to_string(PIL.Image.open("./uploadimages/"+filename),config = conf,lang="eng" )
         print("text: ",text)
         return text
 
